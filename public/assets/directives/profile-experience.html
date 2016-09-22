@@ -1,0 +1,37 @@
+<div ng-controller="PersonalInformationController as personalCtrl">
+    <section class="section summary-section">
+        <h2 class="section-title"><i class="fa fa-user"></i>Quien Soy</h2>
+        <div class="summary" ng-repeat="whoIAm in personalCtrl.personalInformation.whoIAm">
+            <p>{{whoIAm}}</p>
+        </div>
+    </section>
+
+    <section class="section experiences-section">
+        <h2 class="section-title"><i class="fa fa-briefcase"></i>Experiences</h2>
+
+        <div class="item" ng-repeat="experiences in personalCtrl.personalInformation.experiences">
+            <div class="meta">
+                <div class="upper-row">
+                    <h3 class="job-title">{{experiences.job}}</h3>
+                    <div class="time">{{experiences.jobTime}}</div>
+                </div>
+                <div class="company">{{experiences.jobCompany}}</div>
+            </div>
+            <div class="details">
+                <p>{{experiences.jobDescription}}</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-section section">
+        <h2 class="section-title"><i class="fa fa-rocket"></i>Skills &amp; Proficiency</h2>
+        <div class="skillset">
+            <div class="item" ng-repeat="skills in personalCtrl.personalInformation.skills">
+                <h3 class="level-title">{{skills.skill}}</h3>
+                <div class="progress progress-striped active">
+                    <div class="progress-bar" style="width: {{skills.hability}}%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

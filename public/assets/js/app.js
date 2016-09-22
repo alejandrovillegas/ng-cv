@@ -20,6 +20,27 @@
     };
   });
 
+   app.directive("profileGravatar", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "assets/directives/profile-gravatar.html"
+    };
+  });
+
+  app.directive("profileEducation", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "assets/directives/profile-education.html"
+    };
+  });
+
+  app.directive("profileExperience", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "assets/directives/profile-experience.html"
+    };
+  });
+
   networking = {
     mail: "alejo163@hotmail.com",
     cel: "301 491 3882",

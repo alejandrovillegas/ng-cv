@@ -1,0 +1,23 @@
+<div ng-controller="PersonalInformationController as personalCtrl">
+    <div class="education-container container-block">
+        <h2 class="container-block-title">Education</h2>
+        <div class="item" ng-repeat="institute in personalCtrl.personalInformation.education">
+            <h4 class="degree">{{institute.degre}}</h4>
+            <h5 class="meta">{{institute.institute}}</h5>
+            <div class="time">{{institute.year}}</div>
+        </div>
+    </div>
+    <div class="languages-container container-block">
+        <h2 class="container-block-title">Languages</h2>
+        <ul class="list-unstyled interests-list" ng-repeat="langs in personalCtrl.personalInformation.langs">
+            <li>{{langs.lang}} <span class="lang-desc">{{langs.level}}</span></li>
+        </ul>
+    </div>
+
+    <div class="interests-container container-block">
+        <h2 class="container-block-title">Interests</h2>
+        <ul class="list-unstyled interests-list" ng-repeat="interest in personalCtrl.personalInformation.interests">
+            <li>{{interest}}</li>
+        </ul>
+    </div>
+</div>

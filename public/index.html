@@ -5,7 +5,8 @@
     <title>Hoja de Vida</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic'rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic'
+        rel='stylesheet' type='text/css'>
     <!-- Global CSS -->
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
     <!-- Plugins CSS -->
@@ -17,149 +18,26 @@
 <body>
     <div class="wrapper">
         <div class="sidebar-wrapper">
-            <div class="profile-container" ng-controller="ProfileController as profile">
-                <img class="img-circle profile" ng-src="assets/images/{{profile.profile.image | lowercase}}" alt="" />
-                <h1 class="name">{{profile.profile.name}}</h1>
-                <h3 class="tagline">{{profile.profile.profesion}}</h3>
-            </div>
-            <!--//profile-container-->
-            
+            <profile-gravatar></profile-gravatar>
             <profile-networking></profile-networking>
-            <!--<div class="contact-container container-block" ng-controller="NetworkingController as network">
-                <ul class="list-unstyled contact-list">
-                    <li class="email"><i class="fa fa-envelope"></i><a href="mailto: {{network.networking.mail}}">{{network.networking.mail}}</a></li>
-                    <li class="phone"><i class="fa fa-phone"></i>{{network.networking.cel}}</li>
-                    <li class="website"><i class="fa fa-globe"></i><a href="{{network.networking.webpage}}" target="_blank">{{network.networking.webpage}}</a></li>
-                    <li class="github"><i class="fa fa-github"></i><a href="{{network.networking.githubWebpage}}" target="_blank">{{network.networking.github}}</a></li>
-                    <li class="twitter"><i class="fa fa-twitter"></i><a href="{{network.networking.twitterWebpage}}" target="_blank">{{network.networking.twitter}}</a></li>
-                </ul>
-            </div>-->
-            <!--//contact-container-->
-            <div ng-controller="PersonalInformationController as personalCtrl">
-                <div class="education-container container-block">
-                    <h2 class="container-block-title">Education</h2>
-                    <div class="item" ng-repeat="institute in personalCtrl.personalInformation.education">
-                        <h4 class="degree">{{institute.degre}}</h4>
-                        <h5 class="meta">{{institute.institute}}</h5>
-                        <div class="time">{{institute.year}}</div>
-                    </div>
-
-                </div>
-                <!--//education-container-->
-
-                <div class="languages-container container-block">
-                    <h2 class="container-block-title">Languages</h2>
-                    <ul class="list-unstyled interests-list" ng-repeat="langs in personalCtrl.personalInformation.langs">
-                        <li>{{langs.lang}} <span class="lang-desc">{{langs.level}}</span></li>
-                    </ul>
-                </div>
-                <!--//interests-->
-
-                <div class="interests-container container-block">
-                    <h2 class="container-block-title">Interests</h2>
-                    <ul class="list-unstyled interests-list" ng-repeat="interest in personalCtrl.personalInformation.interests">
-                        <li>{{interest}}</li>
-                    </ul>
-                </div>
-                <!--//interests-->
-            </div>
+            <profile-education></profile-education>
         </div>
-        <!--//sidebar-wrapper-->
 
-        <div class="main-wrapper" ng-controller="PersonalInformationController as personalCtrl">
-
-            <section class="section summary-section">
-                <h2 class="section-title"><i class="fa fa-user"></i>Quien Soy</h2>
-                <div class="summary" ng-repeat="whoIAm in personalCtrl.personalInformation.whoIAm">
-                    <p>{{whoIAm}}</p>
-                </div>
-                <!--//summary-->
-            </section>
-            <!--//section-->
-
-            <section class="section experiences-section">
-                <h2 class="section-title"><i class="fa fa-briefcase"></i>Experiences</h2>
-
-                <div class="item" ng-repeat="experiences in personalCtrl.personalInformation.experiences">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">{{experiences.job}}</h3>
-                            <div class="time">{{experiences.jobTime}}</div>
-                        </div>
-                        <!--//upper-row-->
-                        <div class="company">{{experiences.jobCompany}}</div>
-                    </div>
-                    <!--//meta-->
-                    <div class="details">
-                        <p>{{experiences.jobDescription}}</p>
-                    </div>
-                    <!--//details-->
-                </div>
-                <!--//item-->
-            </section>
-            <!--//section-->
-
-            <!--<section class="section projects-section">
-                <h2 class="section-title"><i class="fa fa-archive"></i>Projects</h2>
-                <div class="intro">
-                    <p>You can list your side projects or open source libraries in this section. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Vestibulum et ligula in nunc bibendum fringilla a eu lectus.</p>
-                </div>-->
-            <!--//intro-->
-            <!--<div class="item">
-                    <span class="project-title"><a href="#hook">Velocity</a></span> - <span class="project-tagline">A responsive website template designed to help startups promote, market and sell their products.</span>
-
-                </div>-->
-            <!--//item-->
-            <!--<div class="item">
-                    <span class="project-title"><a href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-web-development-agencies-devstudio/" target="_blank">DevStudio</a></span>                    -
-                    <span class="project-tagline">A responsive website template designed to help web developers/designers market their services. </span>
-                </div>-->
-            <!--//item-->
-
-            <!--</section>-->
-            <!--//section-->
-
-            <section class="skills-section section">
-                <h2 class="section-title"><i class="fa fa-rocket"></i>Skills &amp; Proficiency</h2>
-                <div class="skillset">
-                    <div class="item" ng-repeat="skills in personalCtrl.personalInformation.skills">
-                        <h3 class="level-title">{{skills.skill}}</h3>
-                        <div class="progress progress-striped active">
-                            <div class="progress-bar" style="width: {{skills.hability}}%"></div>
-                        </div>
-                        <!--//level-bar-->
-                    </div>
-                    <!--//item-->
-                </div>
-                <!--//item-->
-
+        <div class="main-wrapper">
+            <profile-experience></profile-experience>
         </div>
-        <!--//item-->
-
-        <!--//item-->
-
-
-
-    </div>
-    </section>
-    <!--//skills-section-->
-
-    </div>
-    <!--//main-body-->
+        <!--//main-body-->
     </div>
 
     <footer class="footer">
         <div class="text-center">
             <small class="copyright">Con  <i class="fa fa-heart"></i> Para  VP</small>
         </div>
-        <!--//container-->
     </footer>
-    <!--//footer-->
-
-    <!-- Javascript -->
-    <!-- custom js -->
+    
+    <!-- Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <!-- custom js -->
     <script type="text/javascript" src="assets/js/app.js"></script>
 </body>
 
