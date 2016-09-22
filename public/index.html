@@ -5,8 +5,7 @@
     <title>Hoja de Vida</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic'
-        rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic'rel='stylesheet' type='text/css'>
     <!-- Global CSS -->
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
     <!-- Plugins CSS -->
@@ -66,21 +65,12 @@
         </div>
         <!--//sidebar-wrapper-->
 
-        <div class="main-wrapper">
+        <div class="main-wrapper" ng-controller="PersonalInformationController as personalCtrl">
 
             <section class="section summary-section">
                 <h2 class="section-title"><i class="fa fa-user"></i>Quien Soy</h2>
-                <div class="summary">
-                    <p>Soy desarrollador de software con especialidad en desarrollo web(JavaScript, HTML5, CSS3, JAVA, JAVAEE,
-                        Spring, Hibernate, MySql) con experiencia en desarrollo de sistemas descentralizados(AWS EC2, Microservicios)
-                        especialmente en la parte comercial y delogística.</p>
-
-                    <p>Soy una persona que se caracteriza por el sentido de pertenencia, lacapacidad de trabajo en equipo, la
-                        búsqueda de actualizaciónpermanente, el trabajo interdisciplinario y el conocimiento de nuevasculturas
-                        y personas.</p>
-
-                    <p>Ingeniero Informático del politécnico colombiano Jaime IsazaCadavid con un gran gusto al software libre,
-                        he participado en numerosos proyectos DevOps y adaptación e integraciones en AWS.</p>
+                <div class="summary" ng-repeat="whoIAm in personalCtrl.personalInformation.whoIAm">
+                    <p>{{whoIAm}}</p>
                 </div>
                 <!--//summary-->
             </section>
@@ -89,128 +79,70 @@
             <section class="section experiences-section">
                 <h2 class="section-title"><i class="fa fa-briefcase"></i>Experiences</h2>
 
-                <div class="item">
+                <div class="item" ng-repeat="experiences in personalCtrl.personalInformation.experiences">
                     <div class="meta">
                         <div class="upper-row">
-                            <h3 class="job-title">Software Developer</h3>
-                            <div class="time">2014 - Present</div>
+                            <h3 class="job-title">{{experiences.job}}</h3>
+                            <div class="time">{{experiences.jobTime}}</div>
                         </div>
                         <!--//upper-row-->
-                        <div class="company">Komet Sales</div>
+                        <div class="company">{{experiences.jobCompany}}</div>
                     </div>
                     <!--//meta-->
                     <div class="details">
-                        <p>JAVA Web Developer. Desarrollo de software para sistemas de gran escala (importación y exportación
-                            de flores.) (www.kometsales.com) Énfasis en JAVA, JAVA EE, JavaScript, BackBone.js, HTML5, CSS3,
-                            Twitter Bootstrap, Stylus, Hibernate, MySql, Spring, JPA y otros. Especialista en lógica de negocio
-                            y Test Driven Develop.</p>
-                        <p> Generación y mantenimiento de micro-servicios en plataformas Amazon AWS, EC2. Metodologia de desarrollo
-                            Agil: Scrum, Kanban</p>
+                        <p>{{experiences.jobDescription}}</p>
                     </div>
                     <!--//details-->
                 </div>
                 <!--//item-->
-
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">Freelance Developer</h3>
-                            <div class="time">2015 - Present</div>
-                        </div>
-                        <!--//upper-row-->
-                        <div class="company">Origami Agencia</div>
-                    </div>
-                    <!--//meta-->
-                    <div class="details">
-                        <p>Desarrollos de software a la medida en numerosos proyectos frontend..</p>
-
-                    </div>
-                    <!--//details-->
-                </div>
-                <!--//item-->
-
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">UI Developer</h3>
-                            <div class="time">2012 - 2014</div>
-                        </div>
-                        <!--//upper-row-->
-                        <div class="company">S4DS</div>
-                    </div>
-                    <!--//meta-->
-                    <div class="details">
-                        <p>Análisis, Diseño, programación y Pruebas se Software S4ds, además de participar en numerosos proyectos
-                            de infraestructura (AWS) y arquitectura de SW.</p>
-                    </div>
-                    <!--//details-->
-                </div>
-                <!--//item-->
-
             </section>
             <!--//section-->
 
-            <section class="section projects-section">
+            <!--<section class="section projects-section">
                 <h2 class="section-title"><i class="fa fa-archive"></i>Projects</h2>
                 <div class="intro">
                     <p>You can list your side projects or open source libraries in this section. Lorem ipsum dolor sit amet,
                         consectetur adipiscing elit. Vestibulum et ligula in nunc bibendum fringilla a eu lectus.</p>
-                </div>
-                <!--//intro-->
-                <div class="item">
+                </div>-->
+            <!--//intro-->
+            <!--<div class="item">
                     <span class="project-title"><a href="#hook">Velocity</a></span> - <span class="project-tagline">A responsive website template designed to help startups promote, market and sell their products.</span>
 
-                </div>
-                <!--//item-->
-                <div class="item">
+                </div>-->
+            <!--//item-->
+            <!--<div class="item">
                     <span class="project-title"><a href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-web-development-agencies-devstudio/" target="_blank">DevStudio</a></span>                    -
                     <span class="project-tagline">A responsive website template designed to help web developers/designers market their services. </span>
-                </div>
-                <!--//item-->
+                </div>-->
+            <!--//item-->
 
-            </section>
+            <!--</section>-->
             <!--//section-->
 
             <section class="skills-section section">
                 <h2 class="section-title"><i class="fa fa-rocket"></i>Skills &amp; Proficiency</h2>
                 <div class="skillset">
-                    <div class="item">
-                        <h3 class="level-title">Python &amp; Django</h3>
-                        <div class="level-bar">
-                            <div class="level-bar-inner" data-level="98%">
-                            </div>
-                        </div>
-                        <!--//level-bar-->
-                    </div>
-                    <!--//item-->
-
-                    <div class="item">
-                        <h3 class="level-title">Javascript &amp; jQuery</h3>
-                        <div class="level-bar">
-                            <div class="level-bar-inner" data-level="98%">
-                            </div>
-                        </div>
-                        <!--//level-bar-->
-                    </div>
-                    <!--//item-->
-
-                    <div class="item">
-                        <h3 class="level-title">Angular</h3>
+                    <div class="item" ng-repeat="skills in personalCtrl.personalInformation.skills">
+                        <h3 class="level-title">{{skills.skill}}</h3>
                         <div class="progress progress-striped active">
-                            <div class="progress-bar" style="width: 45%"></div>
+                            <div class="progress-bar" style="width: {{skills.hability}}%"></div>
                         </div>
+                        <!--//level-bar-->
                     </div>
-                    <!--//level-bar-->
+                    <!--//item-->
                 </div>
                 <!--//item-->
 
-                <!--//item-->
-
-
-
         </div>
-        </section>
-        <!--//skills-section-->
+        <!--//item-->
+
+        <!--//item-->
+
+
+
+    </div>
+    </section>
+    <!--//skills-section-->
 
     </div>
     <!--//main-body-->
