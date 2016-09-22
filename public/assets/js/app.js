@@ -1,17 +1,7 @@
 (function () {
-  var app = angular.module('hojaDeVida', []);
-
-  app.controller('ProfileController', function () {
-    this.profile = profile;
-  });
-
-  app.controller('NetworkingController', function () {
-    this.networking = networking;
-  });
-
-  app.controller('PersonalInformationController', function () {
-    this.personalInformation = personalInformation;
-  });
+  var app = angular.module('hojaDeVida', [
+    'profile.contollers'
+  ]);
 
    app.directive("profileNetworking", function() {
     return {
