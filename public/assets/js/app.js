@@ -13,6 +13,13 @@
     this.personalInformation = personalInformation;
   });
 
+   app.directive("profileNetworking", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "assets/directives/profile-networking.html"
+    };
+  });
+
   networking = {
     mail: "alejo163@hotmail.com",
     cel: "301 491 3882",
